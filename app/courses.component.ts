@@ -1,9 +1,16 @@
-import {Component} from 'angular2/core'
+import { Component } from 'angular2/core'
+import {CourseService} from './course.service'
 
 @Component({
     selector: 'courses',
-    template: '<h2>Hello, welcome to angular js 2</h2>'    
+    templateUrl: './app/view/courses.html' ,
+    providers:[CourseService]
 })
-export class AppComponent{
+export class CourseComponent{
+    name: String = "This is Chandra's first ang2 Program";
+    courses;
 
+    constructor(courseService: CourseService) {
+        this.courses = courseService.getCourses();
+    }
 }

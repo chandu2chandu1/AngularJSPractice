@@ -11,27 +11,28 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var AppComponent;
+    var TutorComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            AppComponent = (function () {
-                function AppComponent() {
+            TutorComponent = (function () {
+                function TutorComponent() {
+                    this.tutorList = ["Tutor 1", "Tutor 2", "Tutor 3"];
                 }
-                AppComponent = __decorate([
+                TutorComponent = __decorate([
                     core_1.Component({
-                        selector: 'my-app',
-                        template: '<h2>Welcome guys</h2>'
+                        selector: 'tutor',
+                        template: "<h2>Courses Goes here</h2>\n            <ul>\n                <li *ngFor='let tutor of tutorList'>{{ tutor }}</li>\n            </ul>"
                     }), 
                     __metadata('design:paramtypes', [])
-                ], AppComponent);
-                return AppComponent;
+                ], TutorComponent);
+                return TutorComponent;
             }());
-            exports_1("AppComponent", AppComponent);
+            exports_1("TutorComponent", TutorComponent);
         }
     }
 });
-//# sourceMappingURL=app.component.js.map
+//# sourceMappingURL=tutor.component.js.map
